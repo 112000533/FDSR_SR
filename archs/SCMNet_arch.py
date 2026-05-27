@@ -145,7 +145,7 @@ class ChannelHighFreqEnergy(nn.Module):
 
         return energy
 
-class FDIB(nn.Module):
+class SCCM(nn.Module):
     def __init__(self, dim=36,ffn_scale=2.0):
         super().__init__()
         self.dim = dim
@@ -203,19 +203,19 @@ class FMB(nn.Module):
         super().__init__()
         self.block_id = block_id
 
-        self.smfa = FDIB(dim)
+        self.sccm = SCCM(dim)
         self.ffn = SGFN(dim,ffn_scale)
         self.norm1 = LayerNorm(dim,data_format="channels_first")
         self.norm2 = LayerNorm(dim,data_format="channels_first")
 
     def forward(self, x):
-        x = self.smfa(self.norm1(x)) + x
+        x = self.sccm(self.norm1(x)) + x
         x = self.ffn(self.norm2(x)) + x
         return x
 
 
 # @ARCH_REGISTRY.register()
-class FDSR(nn.Module):
+class SCMNet(nn.Module):
     def __init__(self, dim=36, n_blocks=8, ffn_scale=2, upscaling_factor=4):
         super().__init__()
         self.scale = upscaling_factor
