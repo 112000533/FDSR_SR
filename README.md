@@ -39,6 +39,6 @@ python basicsr/train.py -opt options/SCCM_DF2K_100w_x4SR.yml
 #### Testing with the example option
 
 ```
-python basicsr/test.py -opt options/test/SCCM_DF2K_x4SR.yml
+python basicsr/test.py -opt options/SCCM_DF2K_x4SR.yml
 ```
 
