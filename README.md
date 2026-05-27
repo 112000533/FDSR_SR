@@ -1,4 +1,4 @@
-# FDSR_SR
+# SCMNet_SR
 
 
 </details> 
@@ -27,18 +27,18 @@
 ▶️ Train and Test
 ---
 
-The [BasicSR](https://github.com/XPixelGroup/BasicSR) framework is utilized to train our FDSR, also testing. Please refer to the usage of basicsr.
+The [BasicSR](https://github.com/XPixelGroup/BasicSR) framework is utilized to train our SCMNet, also testing. Please refer to the usage of basicsr.
 
 #### Training with the example option
 
 ```
-# train FDSR for x4 effieicnt SR
-python basicsr/train.py -opt options/FDSR_DF2K_100w_x4SR.yml
+# train SCMNet for x4 effieicnt SR
+python basicsr/train.py -opt options/SCCM_DF2K_100w_x4SR.yml
 ```
 
 #### Testing with the example option
 
 ```
-python basicsr/test.py -opt options/test/FDSR_DF2K_x4SR.yml
+python basicsr/test.py -opt options/test/SCCM_DF2K_x4SR.yml
 ```
 
